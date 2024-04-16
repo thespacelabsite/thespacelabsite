@@ -1,0 +1,48 @@
+
+
+/* // Medium devices (tablets, 768px and up) */ 
+@media (max-width:768px) { 
+
+  .bottom-right {
+    position: absolute;   
+    bottom: 10px;
+    right: 16px;
+    float: right;
+  }
+  .planet
+  {
+    margin-top: 100px;
+      width: 80%;
+      z-index: 1000;
+  
+    
+  }
+
+  .subt1
+  {
+    float: right;
+    background: rgba(131, 11, 11, 0.289);
+    color: #fff;
+    padding: 10px;
+    min-width: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    border-right-color: aqua;
+    border-right: 5px;
+  }
+
+
+  .subt2
+  {
+    float: right;
+    padding: 10px;
+    background: rgba(7, 7, 145, 0.413);
+    color: #fff;
+    width: auto;
+    font-size: 20px;
+    
+
+  }
+  
+ }
+
