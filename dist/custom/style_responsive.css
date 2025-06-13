@@ -1,25 +1,43 @@
+/* Default carousel image styles */
+.carousel-img {
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+  background-color: #f8f9fa;
+}
 
+/* Ensure carousel container has no padding issues */
+.carousel-inner {
+  overflow: visible;
+}
 
-/* // Medium devices (tablets, 768px and up) */ 
-@media (max-width:768px) { 
+.carousel-item {
+  padding: 0;
+  margin: 0;
+}
 
+/* Default founders image styles for desktop */
+.founders-img {
+  max-height: 400px;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
   .bottom-right {
-    position: absolute;   
+    position: absolute;
     bottom: 10px;
     right: 16px;
     float: right;
   }
-  .planet
-  {
+  .planet {
     margin-top: 100px;
-      width: 80%;
-      z-index: 1000;
-  
-    
+    width: 80%;
+    z-index: 1000;
   }
 
-  .subt1
-  {
+  .subt1 {
     float: right;
     background: rgba(131, 11, 11, 0.289);
     color: #fff;
@@ -31,18 +49,72 @@
     border-right: 5px;
   }
 
-
-  .subt2
-  {
+  .subt2 {
     float: right;
     padding: 10px;
     background: rgba(7, 7, 145, 0.413);
     color: #fff;
     width: auto;
     font-size: 20px;
-    
-
   }
-  
- }
 
+  /* Responsive carousel styles */
+  .carousel-img {
+    height: 200px !important;
+    object-fit: contain !important;
+    width: 100% !important;
+  }
+
+  /* Responsive founders image styles */
+  .founders-img {
+    max-height: 250px !important;
+    object-fit: cover !important;
+  }
+
+  /* Team section spacing */
+  .row.mt-5 {
+    margin-top: 2rem !important;
+  }
+}
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .carousel-img {
+    height: 180px !important;
+    object-fit: contain !important;
+    width: 100% !important;
+  }
+
+  .founders-img {
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .display-5 {
+    font-size: 1.8rem !important;
+  }
+
+  .prom {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .carousel-img {
+    height: 150px !important;
+    object-fit: contain !important;
+    width: 100% !important;
+  }
+
+  .founders-img {
+    max-height: 180px !important;
+    object-fit: cover !important;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
