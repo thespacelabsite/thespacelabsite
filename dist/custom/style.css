@@ -724,6 +724,9 @@ p.white {
   margin-top: 75px !important;
 }
 
+
+
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -868,7 +871,7 @@ a {
   margin: 0px !important;
 }
 .whitebg {
-  background: #fff !important;
+  background: #ffffff !important;
 }
 .whitetext {
   color: #fff !important;
@@ -1107,6 +1110,27 @@ a {
   color: #4f74aa;
 }
 
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-text-align-last: left;
+  text-align-last: left;
+  hyphens: auto;
+}
+
+.lead.text-justify {
+  font-size: 1.130rem;
+  line-height: 1.9;
+  color: #4c4b4b !important;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+p.lead {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .prom {
   width: 100px;
   height: 100px;
@@ -1211,4 +1235,15 @@ a {
 
 .size2 {
   max-height: 100px !important;
+}
+
+
+.text-justify-overview {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-text-align-last: left;
+  text-align-last: left;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #fff;
 }
