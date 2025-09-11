@@ -1593,7 +1593,19 @@
           <a href="https://example.com/new-article" target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/newsspacelabs.png" alt="Image" class="img-fluid" />
+                <img src="img/news6.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <!-- Card 5 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="https://example.com/new-article" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news5.1.png" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1624,10 +1636,10 @@
   </main>
 
   <style>
-    .news-train-animation {
-      gap: 1rem;
-      animation: scrollNews 30s linear infinite;
-    }
+   .news-train-animation {
+  gap: 1rem;
+  animation: scrollNews 15s linear infinite; /* faster speed */
+}
 
     @keyframes scrollNews {
       0% {
@@ -1666,14 +1678,14 @@
 
 
   <script>
-    const train = document.querySelector('.news-train-animation');
+  const train = document.querySelector('.news-train-animation');
 
-    train.addEventListener('mouseenter', () => {
-      train.style.animationPlayState = 'paused';
-      setTimeout(() => {
-        train.style.animationPlayState = 'running';
-      }, 10000); // resume after 5 seconds
-    });
+  train.addEventListener('mouseenter', () => {
+    train.style.animationPlayState = 'paused';
+    setTimeout(() => {
+      train.style.animationPlayState = 'running';
+    }, 1000); // resume after 1 seconds
+  });
   </script>
 
 
