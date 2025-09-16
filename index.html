@@ -1590,7 +1590,7 @@
 
         <!-- Card 4 -->
         <div class="col-md-4 flex-shrink-0">
-          <a href="https://example.com/new-article" target="_blank">
+          <a href="" target="_blank">
             <div class="card">
               <div class="card-body text-center">
                 <img src="img/news6.png" alt="Image" class="img-fluid" />
@@ -1602,7 +1602,7 @@
 
         <!-- Card 5 -->
         <div class="col-md-4 flex-shrink-0">
-          <a href="https://example.com/new-article" target="_blank">
+          <a href="https://www.linkedin.com/posts/thespacelabs_excellent-opportunity-and-platform-created-activity-7356737020167114752-i2Vu" target="_blank">
             <div class="card">
               <div class="card-body text-center">
                 <img src="img/news5.1.png" alt="Image" class="img-fluid" />
@@ -1631,6 +1631,39 @@
             </div>
           </a>
         </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/n3.jpg" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news6.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <!-- Card 5 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="https://www.linkedin.com/posts/thespacelabs_excellent-opportunity-and-platform-created-activity-7356737020167114752-i2Vu" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news5.1.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </main>
@@ -1638,16 +1671,15 @@
   <style>
    .news-train-animation {
   gap: 1rem;
-  animation: scrollNews 15s linear infinite; /* faster speed */
+  animation: scrollNews 30s linear infinite; /* faster speed */
 }
 
     @keyframes scrollNews {
       0% {
         transform: translateX(0);
       }
-
       100% {
-        transform: translateX(-50%);
+   transform: translateX(calc(-5 * (33.33% + 1rem))); /* Adjust based on number of cards and gap */
       }
     }
 
