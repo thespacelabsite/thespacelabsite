@@ -182,7 +182,22 @@
       }
 
       .hero-overlay {
-        padding: 0 24px;
+        padding: 0 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-overlay .hero1,
+      .hero-overlay .hero1sub {
+        text-align: center;
+      }
+
+      .hero1 {
+        font-size: 26px;
+      }
+
+      .hero1sub {
+        font-size: 18px;
       }
     }
   </style>
@@ -1871,6 +1886,23 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: 767.98px) {
+      .news-train-animation {
+        --card-width: 80%;
+        gap: 0.75rem;
+      }
+
+      .news-train-animation>[class*="col-"] {
+        flex: 0 0 80%;
+        max-width: 80%;
+      }
+
+      .news-train-animation .card {
+        max-width: 100%;
+        max-height: 320px;
+      }
     }
 
     @media (min-width: 1400px) {
