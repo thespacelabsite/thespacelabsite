@@ -20,6 +20,7 @@
   <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="dist/custom/style.css" rel="stylesheet">
   <link href="dist/custom/style_responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -1270,52 +1271,7 @@
 
                 </div>
 
-                <!-- Our Team Section -->
-                <!-- <div class="row mt-5">
-                  <div class="col">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Our Team</h1>
-                  </div>
-                </div> -->
 
-                <!-- Team Carousel -->
-                <!-- <div class="row mb-4">
-                  <div class="col">
-                    <div id="teamCarousel" class="carousel slide" data-bs-interval="3000">
-                      <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"
-                          aria-current="true" aria-label="Team Slide 1"></button>
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"
-                          aria-label="Team Slide 2"></button>
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"
-                          aria-label="Team Slide 3"></button>
-                      </div>
-                      <div class="carousel-inner">
-                        <div class="carousel-item ">
-                          <img src="img/grp-onam.jpg" class="d-block w-100 carousel-img" alt="Team Member 1" />
-                        </div>
-                        <div class="carousel-item active">
-                          <img src="img/team1.jpg" class="d-block w-100 carousel-img" alt="Team Member 2" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="img/team2.jpg" class="d-block w-100 carousel-img" alt="Team Member 3" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="img/team3.jpg" class="d-block w-100 carousel-img" alt="Team Member 4" />
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                  </div>
-                </div> -->
 
                 <!-- Our Team Section -->
                 <div class="row mt-5">
@@ -1324,47 +1280,44 @@
                   </div>
                 </div>
 
-                <!-- Team Carousel -->
+                <!-- Team Carousel (Splide) -->
                 <div class="row mb-4">
                   <div class="col">
-                    <div id="teamCarousel" class="carousel slide" data-bs-interval="3000">
-                      <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="0" class="active"
-                          aria-current="true" aria-label="Team Slide 1"></button>
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"
-                          aria-label="Team Slide 2"></button>
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"
-                          aria-label="Team Slide 3"></button>
-                        <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3"
-                          aria-label="Team Slide 4"></button>
+                    <section id="teamSplide" class="splide" aria-label="Team gallery">
+                      <div class="splide__track">
+                        <ul class="splide__list">
+                          <li class="splide__slide">
+                            <img src="img/grp-onam.jpg" alt="Team group photo" />
+                          </li>
+                          <li class="splide__slide">
+                            <img src="img/team2.jpg" alt="Team member 3" />
+                          </li>
+                          <li class="splide__slide">
+                            <img src="img/team3.jpg" alt="Team member 4" />
+                          </li>
+                          <li class="splide__slide">
+                            <img src="img/team1.jpg" alt="Team member 3" />
+                          </li>
+                        </ul>
                       </div>
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="img/grp-onam.jpg" class="d-block w-100 carousel-img" alt="Team Member 1" />
-                        </div>
-                        <!-- <div class="carousel-item">
-                          <img src="img/team1.jpg" class="d-block w-100 carousel-img" alt="Team Member 2" />
-                        </div> -->
-                        <div class="carousel-item">
-                          <img src="img/team2.jpg" class="d-block w-100 carousel-img" alt="Team Member 3" />
-                        </div>
-                        <div class="carousel-item">
-                          <img src="img/team3.jpg" class="d-block w-100 carousel-img" alt="Team Member 4" />
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
+                    </section>
                   </div>
                 </div>
+
+                <style>
+                  #teamSplide {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    max-width: calc(100% - 10px);
+                    margin: 0 auto;
+                  }
+
+                  #teamSplide .splide__slide img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                </style>
 
 
               </div>
@@ -1446,11 +1399,27 @@
 
 
   <script src="dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="dist/js/aos.js"></script>
 
   <script src="dist/custom/cs.js"></script>
   <script>
     AOS.init();
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.querySelector('#teamSplide')) {
+        new Splide('#teamSplide', {
+          type: 'loop',
+          autoplay: true,
+          interval: 3000,
+          pauseOnHover: true,
+          pauseOnFocus: true,
+          arrows: true,
+          pagination: true,
+          heightRatio: 0.55,
+          cover: true,
+        }).mount();
+      }
+    });
 
 
   </script>
