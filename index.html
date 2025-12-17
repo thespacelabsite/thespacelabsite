@@ -119,6 +119,68 @@
     .client-logo.active {
       opacity: 1;
     }
+
+    .hero-seamless {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 520px;
+      background: #000;
+    }
+
+    .hero-track {
+      --slide-count: 6;
+      display: flex;
+      width: calc(100% * var(--slide-count) * 2);
+      animation: hero-marquee var(--hero-speed, 60s) linear infinite;
+    }
+
+    .hero-slide {
+      position: relative;
+      flex: 0 0 calc(100% / (var(--slide-count) * 2));
+      height: 70vh;
+      min-height: 520px;
+      max-height: 780px;
+      overflow: hidden;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 10vw;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    @keyframes hero-marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-slide {
+        height: 60vh;
+        min-height: 360px;
+      }
+
+      .hero-overlay {
+        padding: 0 24px;
+      }
+    }
   </style>
 </head>
 
@@ -946,105 +1008,111 @@
   </main>
 
   <main data-aos="fade-up">
-    <div id="myCarousel" class="carousel slide" data-bs-interval="3000">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5" class=""></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6" class=""></button>
+    <div class="hero-seamless">
+      <div class="hero-track">
+        <div class="hero-slide">
+          <img src="img/unsp1.jpg" alt="Trajectory optimization and optimizers for aerospace applications" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Optimizers</h1>
+            <p class="white hero1sub">We optimize trajectory with spectrum of optimizers</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/imx3.jpg" alt="High granularity vehicle simulation technology" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Simulation</h1>
+            <p class="white hero1sub">Simulate the Vehicles with highest granularity</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/imx1.jpg" alt="Closed loop simulation with mathematical models and flight software" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Closed loop Simulation</h1>
+            <p class="white hero1sub">Closed loop simulation with mathematical models or flight software and hardware
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/imx4.jpg" alt="Navigation, Guidance and Control system development for aerospace vehicles" />
+          <div class="hero-overlay">
+            <h1 class="hero1">System Development</h1>
+            <p class="white hero1sub">We develop Navigation, Guidance and Control system/Attitude Determination and
+              Control system which is the brain of any aerospace vehicle.</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/imx1.jpg" alt="AI/ML enabled software simulator with hardware integration capabilities" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Simulator</h1>
+            <p class="white hero1sub">We design software simulator having AI/ML features with capability to integrate
+              wide range of external tools, data sources and hardware</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/imx4.jpg" alt="Complete space mission solutions and aerospace technology" />
+          <div class="hero-overlay">
+            <h1 class="hero1">The ultimate solution for your space needs</h1>
+            <p class="white hero1sub">Conquer the sky and beyond</p>
+          </div>
+        </div>
+
+        <!-- duplicate set for seamless loop -->
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/unsp1.jpg" alt="Trajectory optimization and optimizers for aerospace applications" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Optimizers</h1>
+            <p class="white hero1sub">We optimize trajectory with spectrum of optimizers</p>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/imx3.jpg" alt="High granularity vehicle simulation technology" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Simulation</h1>
+            <p class="white hero1sub">Simulate the Vehicles with highest granularity</p>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/imx1.jpg" alt="Closed loop simulation with mathematical models and flight software" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Closed loop Simulation</h1>
+            <p class="white hero1sub">Closed loop simulation with mathematical models or flight software and hardware
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/imx4.jpg" alt="Navigation, Guidance and Control system development for aerospace vehicles" />
+          <div class="hero-overlay">
+            <h1 class="hero1">System Development</h1>
+            <p class="white hero1sub">We develop Navigation, Guidance and Control system/Attitude Determination and
+              Control system which is the brain of any aerospace vehicle.</p>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/imx1.jpg" alt="AI/ML enabled software simulator with hardware integration capabilities" />
+          <div class="hero-overlay">
+            <h1 class="hero1">Simulator</h1>
+            <p class="white hero1sub">We design software simulator having AI/ML features with capability to integrate
+              wide range of external tools, data sources and hardware</p>
+          </div>
+        </div>
+
+        <div class="hero-slide" aria-hidden="true">
+          <img src="img/imx4.jpg" alt="Complete space mission solutions and aerospace technology" />
+          <div class="hero-overlay">
+            <h1 class="hero1">The ultimate solution for your space needs</h1>
+            <p class="white hero1sub">Conquer the sky and beyond</p>
+          </div>
+        </div>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/unsp1.jpg" class="d-block w-100"
-            alt="Trajectory optimization and optimizers for aerospace applications" />
-
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">Optimizers</h1>
-              <p class="white hero1sub">
-                We optimize trajectory with spectrum of optimizers
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="img/imx3.jpg" class="d-block w-100" alt="High granularity vehicle simulation technology" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">Simulation</h1>
-              <p class="white hero1sub">
-                Simulate the Vehicles with highest granularity
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="img/imx1.jpg" class="d-block w-100"
-            alt="Closed loop simulation with mathematical models and flight software" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">Closed loop Simulation</h1>
-              <p class="white hero1sub">
-                Closed loop simulation with mathematical models or flight software and hardware
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="img/imx4.jpg" class="d-block w-100"
-            alt="Navigation, Guidance and Control system development for aerospace vehicles" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">
-                System Development
-              </h1>
-              <p class="white hero1sub">We develop Navigation, Guidance and Control system/Attitude Determination and
-                Control system which is the brain of any aerospace vehicle.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="img/imx1.jpg" class="d-block w-100"
-            alt="AI/ML enabled software simulator with hardware integration capabilities" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">
-                Simulator
-              </h1>
-              <p class="white hero1sub">We design software simulator having AI/ML features with capability to integrate
-                wide range of external tools, data sources and hardware</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="img/imx4.jpg" class="d-block w-100"
-            alt="Complete space mission solutions and aerospace technology" />
-          <div class="container">
-            <div class="carousel-caption text-start">
-              <h1 class="hero1">
-                The ultimate solution for your space needs
-              </h1>
-              <p class="white hero1sub">Conquer the sky and beyond</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </main>
 
