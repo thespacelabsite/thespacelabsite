@@ -1675,7 +1675,7 @@
             target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n1.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news1.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1686,7 +1686,7 @@
           <a href="https://keralatechnology.com/blog/all-women-team-ready-for-lift-off" target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n2.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news2.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1697,7 +1697,7 @@
           <a target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n3.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news3.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1708,7 +1708,7 @@
           <a href="" target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/news6.png" alt="Image" class="img-fluid" />
+                <img src="img/news/news4.png" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1721,7 +1721,29 @@
             target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/news5.1.png" alt="Image" class="img-fluid" />
+                <img src="img/news/news5.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news/news6.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news/news7.png" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1733,7 +1755,7 @@
             target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n1.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news1.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1742,7 +1764,7 @@
           <a href="https://keralatechnology.com/blog/all-women-team-ready-for-lift-off" target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n2.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news2.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1752,7 +1774,7 @@
           <a target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/n3.jpg" alt="Image" class="img-fluid" />
+                <img src="img/news/news3.jpg" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1763,7 +1785,7 @@
           <a href="">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/news6.png" alt="Image" class="img-fluid" />
+                <img src="img/news/news4.png" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
@@ -1776,20 +1798,45 @@
             target="_blank">
             <div class="card">
               <div class="card-body text-center">
-                <img src="img/news5.1.png" alt="Image" class="img-fluid" />
+                <img src="img/news/news5.png" alt="Image" class="img-fluid" />
               </div>
             </div>
           </a>
         </div>
+
+
+        <!-- Card 6 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news/news6.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-4 flex-shrink-0">
+          <a href="" target="_blank">
+            <div class="card">
+              <div class="card-body text-center">
+                <img src="img/news/news7.png" alt="Image" class="img-fluid" />
+              </div>
+            </div>
+          </a>
+        </div>
+
+
       </div>
     </div>
   </main>
 
   <style>
     .news-train-animation {
+      --card-count: 7;
       gap: 1rem;
-      animation: scrollNews 30s linear infinite;
-      /* faster speed */
+      animation: scrollNews 35s linear infinite;
     }
 
     @keyframes scrollNews {
@@ -1798,8 +1845,7 @@
       }
 
       100% {
-        transform: translateX(calc(-5 * (33.33% + 1rem)));
-        /* Adjust based on number of cards and gap */
+        transform: translateX(calc(-1 * var(--card-count) * (33.33% + 1rem)));
       }
     }
 
@@ -1816,14 +1862,13 @@
     /* Card size limit */
     .news-train-animation .card {
       max-width: 600px;
-      max-height: 500px;
+      max-height: 420px;
       width: 100%;
-      /* Make it responsive */
     }
 
     .news-train-animation .card img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   </style>
@@ -1831,13 +1876,15 @@
 
   <script>
     const train = document.querySelector('.news-train-animation');
+    if (train) {
+      train.addEventListener('mouseenter', () => {
+        train.style.animationPlayState = 'paused';
+      });
 
-    train.addEventListener('mouseenter', () => {
-      train.style.animationPlayState = 'paused';
-      setTimeout(() => {
+      train.addEventListener('mouseleave', () => {
         train.style.animationPlayState = 'running';
-      }, 1000); // resume after 1 seconds
-    });
+      });
+    }
   </script>
 
 
