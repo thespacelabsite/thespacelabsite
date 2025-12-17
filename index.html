@@ -135,6 +135,10 @@
       animation: hero-marquee var(--hero-speed, 60s) linear infinite;
     }
 
+    .hero-seamless:hover .hero-track {
+      animation-play-state: paused;
+    }
+
     .hero-slide {
       position: relative;
       flex: 0 0 calc(100% / (var(--slide-count) * 2));
