@@ -1835,6 +1835,7 @@
   <style>
     .news-train-animation {
       --card-count: 7;
+      --card-width: 33.33%;
       gap: 1rem;
       animation: scrollNews 35s linear infinite;
     }
@@ -1845,7 +1846,7 @@
       }
 
       100% {
-        transform: translateX(calc(-1 * var(--card-count) * (33.33% + 1rem)));
+        transform: translateX(calc(-1 * var(--card-count) * (var(--card-width) + 1rem)));
       }
     }
 
@@ -1870,6 +1871,22 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media (min-width: 1400px) {
+      .news-train-animation {
+        --card-width: 25%;
+        gap: 1.25rem;
+      }
+
+      .news-train-animation>[class*="col-"] {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      .news-train-animation .card {
+        max-height: 360px;
+      }
     }
   </style>
 
