@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G. Ravi Varma - Profile | Spacelabs</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --glass-bg: rgba(25, 25, 35, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --primary-glow: #1de9ff;
+            --secondary-glow: #0d6efd;
+            --text-main: #ffffff;
+            --text-muted: #b0b8c4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #050505;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient animated background elements */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #151525 0%, #05050a 100%);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(90px);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 12s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(13, 110, 253, 0.4);
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(29, 233, 255, 0.25);
+            animation-duration: 15s;
+            animation-direction: alternate-reverse;
+        }
+
+        .blob-3 {
+            top: 40%;
+            left: 60%;
+            width: 300px;
+            height: 300px;
+            background: rgba(138, 43, 226, 0.2);
+            animation-duration: 10s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-30px, 40px) scale(0.9);
+            }
+        }
+
+        /* Main Card Container */
+        .vcard-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 420px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating NFC Badge */
+        .nfc-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-glow);
+        }
+
+        /* Header & Profile Image */
+        .profile-header {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            box-shadow: 0 10px 25px rgba(29, 233, 255, 0.3);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #111118;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--primary-glow);
+            color: #000;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            border: 3px solid #111118;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.5px;
+            background: linear-gradient(to right, #fff, var(--primary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-title {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Action Icon Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .action-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, rgba(29, 233, 255, 0.2), rgba(13, 110, 253, 0.2));
+            transform: translateY(-5px) scale(1.05);
+            color: var(--primary-glow);
+            border-color: rgba(29, 233, 255, 0.4);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(29, 233, 255, 0.2);
+        }
+
+        /* Main Save Button */
+        .save-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, #0d6efd, #1de9ff);
+            color: #000;
+            border: none;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(29, 233, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(29, 233, 255, 0.5);
+            background: linear-gradient(135deg, #0b5ed7, #00d2eb);
+            color: #000;
+        }
+
+        /* Contact Details List */
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(29, 233, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-glow);
+            margin-right: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .contact-text h4 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0 0 0.3rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .contact-text p {
+            font-size: 1.05rem;
+            margin: 0;
+            color: #fff;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact-arrow {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover .contact-arrow {
+            color: var(--primary-glow);
+        }
+
+        /* Bio Section */
+        .bio-section {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .bio-section h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .bio-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* Utilities */
+        .brand-logo {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .brand-logo img {
+            height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient Animated Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="vcard-container">
+
+        <div class="nfc-badge">
+            <i class="fas fa-wifi fa-rotate-90"></i> NFC Premium
+        </div>
+
+        <div class="profile-header">
+            <div class="profile-img-container">
+                <img src="ravi.jpeg" alt="G. Ravi Varma" class="profile-img"
+                    onerror="this.src='https://ui-avatars.com/api/?name=Ravi+Varma&background=1de9ff&color=000&size=200'">
+                <div class="verified-badge"><i class="fas fa-check"></i></div>
+            </div>
+            <h1 class="profile-name">G. Ravi Varma</h1>
+            <h2 class="profile-title">Project Engineer, Spacelabs</h2>
+        </div>
+
+        <div class="action-buttons">
+            <a href="mailto:ravivarma@thespacelabs.com" class="action-btn" title="Email" data-bs-toggle="tooltip">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/919398432576" class="action-btn" title="WhatsApp" target="_blank"
+                data-bs-toggle="tooltip">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="http://www.thespacelabs.com" class="action-btn" title="Website" data-bs-toggle="tooltip">
+                <i class="fas fa-globe"></i>
+            </a>
+            <a href="#" class="action-btn" title="Share" id="shareBtn" data-bs-toggle="tooltip">
+                <i class="fas fa-share-alt"></i>
+            </a>
+        </div>
+
+        <button id="save-vcard-btn" class="save-btn">
+            <i class="fas fa-address-card"></i> Save Contact
+        </button>
+
+        <div class="contact-details">
+            <a href="mailto:ravivarma@thespacelabs.com" class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>Email</h4>
+                    <p>ravivarma@thespacelabs.com</p>
+                </div>
+                <div class="contact-arrow"><i class="fas fa-chevron-right"></i></div>
+            </a>
+
+            <a href="https://wa.me/919398432576" class="contact-item" target="_blank">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>WhatsApp / Phone</h4>
+                    <p>+91 9398432576</p>
+                </div>
+                <div class="contact-arrow"><i class="fas fa-chevron-right"></i></div>
+            </a>
+
+            <a href="http://www.thespacelabs.com" class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>Website</h4>
+                    <p>www.thespacelabs.com</p>
+                </div>
+                <div class="contact-arrow"><i class="fas fa-chevron-right"></i></div>
+            </a>
+        </div>
+
+        <div class="bio-section">
+            <h3>Profile</h3>
+            <p>
+                G. Ravi Varma is an Aerospace Engineer with a B.Tech in Aerospace Engineering from the Indian Institute
+                of Space Science and Technology (IIST), Thiruvananthapuram. He is currently working as a Project
+                Engineer at Spacelabs. He specializes in designing guidance algorithms within GNC (Guidance, Navigation,
+                and Control) subsystems for various aerospace vehicles, including launch vehicles and satellites.
+            </p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // vCard Generation & Download
+        document.getElementById('save-vcard-btn').addEventListener('click', function () {
+            const vcardData = \`BEGIN:VCARD
+VERSION:3.0
+N:Varma;G. Ravi;;Mr.;
+FN:G. Ravi Varma
+ORG:Spacelabs
+TITLE:Project Engineer
+TEL;type=CELL;type=VOICE;type=pref:+919398432576
+EMAIL;type=INTERNET;type=WORK:ravivarma@thespacelabs.com
+URL:http://www.thespacelabs.com
+NOTE:Aerospace Engineer with a B.Tech from IIST, Thiruvananthapuram. Specializes in designing guidance algorithms within GNC subsystems.
+END:VCARD\`;
+      
+      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'Ravi_Varma_Spacelabs.vcf';
+      
+      document.body.appendChild(a);
+      a.click();
+      
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    });
+
+    // Native Share API Integration
+    document.getElementById('shareBtn').addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'G. Ravi Varma - Spacelabs Profile',
+            text: 'Contact details for G. Ravi Varma, Project Engineer at Spacelabs',
+            url: window.location.href,
+          });
+        } catch (err) {
+          console.log('Share error or cancelled:', err.message);
+        }
+      } else {
+        // Fallback or copy to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Profile link copied to clipboard!');
+        });
+      }
+    });
+    </script>
+</body>
+
+</html>
