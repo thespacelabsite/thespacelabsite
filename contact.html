@@ -904,6 +904,8 @@
       color: #fff;
       padding: 4rem 0;
       position: relative;
+      margin-top: 4rem;
+      z-index: 100;
     }
 
     .contact-creative p,
@@ -940,7 +942,7 @@
     .form-title {
       font-size: 1.3rem;
       font-weight: 700;
-      background: -webkit-linear-gradient(#fff, #00d2ff);
+      background: -webkit-linear-gradient(#fff, #f53fec);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -979,13 +981,13 @@
       left: 0.75rem;
       width: 16px;
       height: 16px;
-      fill: rgba(0, 210, 255, 0.5);
+      fill: rgba(0, 247, 255, 0.5);
       pointer-events: none;
       transition: all 0.3s ease;
     }
 
     .input-wrapper:focus-within .input-icon {
-      fill: #00d2ff;
+      fill: #ff0077;
       transform: scale(1.1);
     }
 
@@ -1008,8 +1010,8 @@
 
     .modern-input:focus {
       background: rgba(255, 255, 255, 0.1) !important;
-      border-color: #00d2ff !important;
-      box-shadow: 0 0 12px rgba(0, 210, 255, 0.2) !important;
+      border-color: #fcf8fb !important;
+      box-shadow: 0 0 12px rgba(4, 33, 39, 0.2) !important;
       color: #fff !important;
       outline: none;
       transform: translateY(-1px);
@@ -1030,7 +1032,7 @@
     }
 
     .btn-submit-modern {
-      background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+      background: linear-gradient(135deg, #f53fec 0%, #0099cc 100%);
       border: none;
       color: #fff !important;
       padding: 0.8rem 1.6rem;
@@ -1068,7 +1070,7 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(0, 210, 255, 0.3);
       color: #fff !important;
-      background: linear-gradient(135deg, #00e5ff 0%, #00b3e5 100%);
+      background: linear-gradient(135deg, #00ccff 0%, #f53fec 100%);
     }
 
     .btn-submit-modern:active {
@@ -1134,17 +1136,17 @@
       align-items: center;
       margin-right: 1.5rem;
       font-size: 1.5rem;
-      color: #00d2ff;
+      color: #f53fec;
       border: 1px solid rgba(255, 255, 255, 0.2);
       transition: all 0.3s ease;
       flex-shrink: 0;
     }
 
     .contact-info-item:hover .contact-icon {
-      background: #00d2ff;
+      background: #00aeff;
       color: #fff;
       transform: scale(1.1);
-      border-color: #00d2ff;
+      border-color: #f5f8f8;
       box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
     }
 
@@ -1171,7 +1173,7 @@
     .modern-title {
       font-size: 3.5rem;
       font-weight: 800;
-      background: -webkit-linear-gradient(#fff, #00d2ff);
+      background: -webkit-linear-gradient(#fff, #f53fec);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1215,7 +1217,7 @@
     }
 
     .social-bubbles a:hover {
-      background: #00d2ff;
+      background: #f700ff;
       transform: translateY(-5px);
       color: #fff;
       box-shadow: 0 10px 15px rgba(0, 210, 255, 0.3);
@@ -1422,9 +1424,72 @@
         transform: translateY(0);
       }
     }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .contact-creative {
+        padding: 2rem 0;
+        margin-top: 1rem;
+      }
+      .modern-title {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .modern-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+      }
+      .glass-card {
+        padding: 1.5rem;
+      }
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+      }
+      .contact-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+      .contact-details h5 {
+        font-size: 1.1rem;
+      }
+      .contact-details p {
+        font-size: 0.85rem;
+      }
+      .social-bubbles a {
+        width: 38px;
+        height: 38px;
+        margin-right: 0.5rem;
+      }
+      .social-bubbles a svg {
+        width: 16px;
+        height: 16px;
+      }
+      .row.g-5 {
+        --bs-gutter-y: 1.5rem;
+        --bs-gutter-x: 1.5rem;
+      }
+      .left-stars-decoration {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modern-title {
+        font-size: 1.8rem;
+      }
+      .contact-form-card {
+        padding: 1.25rem;
+      }
+    }
   </style>
 
-  <main class="contact-creative" data-aos="fade-up" style="position: relative; z-index:100; margin-top: 4rem;">
+  <main class="contact-creative" data-aos="fade-up">
 
     <div class="container contact-section-wrapper">
 
@@ -1555,7 +1620,7 @@
                       d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4z" />
                   </svg>
                   <textarea id="message" name="message" class="form-control modern-input" rows="4"
-                    placeholder="Tell us about your project, ideas, or inquiries..." required></textarea>
+                    placeholder="Tell us about your Requirements, ideas, or inquiries..." required></textarea>
                 </div>
               </div>
 
@@ -1587,7 +1652,7 @@
               </div>
               <div class="message-content">
                 <h6 class="message-title">Success!</h6>
-                <p class="message-text">Your message has been sent successfully. We'll be in touch soon!</p>
+                <p class="message-text">Your message has been sent successfully. Our team will get back to you soon!</p>
               </div>
             </div>
 
@@ -1698,7 +1763,7 @@
       </div>
 
       <!-- Right-Aligned Social Icons -->
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex mb-0">
+      <ul class="nav col-md-4 justify-content-center justify-content-md-end list-unstyled d-flex mb-0 mt-3 mt-md-0">
         <li class="ms-3">
           <a class="text" target="_blank" href="https://www.linkedin.com/company/thespacelabs">
             <img src="icon/linkedin.png" alt="LinkedIn" style="width: 24px; height: 24px;">
