@@ -165,7 +165,7 @@ body {
 
 .bg {
   background: rgb(46, 46, 46);
-  background: url(images/bgsparcle.jpg);
+  background: url(images/bgsparcle.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
@@ -174,7 +174,7 @@ body {
 }
 .bgs {
   background: rgb(46, 46, 46);
-  background: url(images/bgsparcle.jpg);
+  background: url(images/bgsparcle.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
@@ -961,7 +961,7 @@ h1.white {
 }
 
 .covermeservice {
-  background-image: url(../../img/im3.png);
+  background-image: url(../../img/im3.webp);
   background-size: cover;
   height: 300px;
   background-position: top 50px;
@@ -969,7 +969,7 @@ h1.white {
 }
 
 .covermecontact {
-  background-image: url(../../img/im4.png);
+  background-image: url(../../img/im4.webp);
   background-size: cover;
   height: 300px;
   background-position: top 50px;
